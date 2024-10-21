@@ -1,0 +1,26 @@
+#include <stdio.h>
+int Binary_search(int a[],int n,int data){
+    int l = 0, r =n-1, mid;
+    while (l <= r) {
+        mid = (l + r) / 2; 
+        if (data == a[mid])
+            return mid;
+        else if (data < a[mid])
+            r = mid-1;
+        else
+            l = mid+1;
+    }
+    return -1;
+}
+int main() {
+    int a[10] = {4, 5, 17, 23, 25, 45, 59, 63, 71, 89};
+    int data, result;
+    printf("Enter the number to search: ");
+    scanf("%d", &data);
+    result =Binary_search(a, 10, data);
+    if (result ==-1)
+        printf("Element not found\n");
+    else
+        printf("Element found at index %d\n", result);
+    return 0;
+}
