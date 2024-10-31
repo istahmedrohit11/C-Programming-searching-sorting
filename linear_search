@@ -1,0 +1,24 @@
+#include<stdio.h>
+
+int linear_search(int a[], int n, int data) {
+    for(int i = 0; i < n; i++) {
+        if(a[i] == data) {
+            return i; // Return the index if data is found
+        }
+    }
+    return -1; // Return -1 if data is not found
+}
+
+int main() {
+    int a[5] = {0, 11, 22, 33, 44};
+    int data, result;
+    printf("Which data do you need?\n");
+    scanf("%d", &data);
+    result = linear_search(a, 5, data);
+    if(result != -1) {
+        printf("Data is found at index: %d\n", result);
+    } else {
+        printf("Data is not found\n");
+    }
+    return 0;
+}
